@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-(5tscmtj_5akxns-@xcr76aa&g=)z(znio=wpfl7h0qn$h-v3-
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-ALLOWED_HOSTS.append(os.getenv('SITE_URL'))
+if os.getenv('SITE_URL'):
+  ALLOWED_HOSTS.append(os.getenv('SITE_URL'))
 
 
 # Application definition
